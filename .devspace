@@ -1,0 +1,12 @@
+
+softwares:
+  - name: cypress
+    type: cypress
+  - exposes:
+      - name: web-server
+        port: 8080
+        targetPort: 8080
+    name: opm
+    options:
+      ide: idea-c
+    type: projector
