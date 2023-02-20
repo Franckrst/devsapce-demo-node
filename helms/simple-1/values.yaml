@@ -5,10 +5,10 @@
 replicaCount: 1
 
 image:
-  repository: openjdk
+  repository: node
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "11"
+  tag: "19-alpine3.16"
 
 imagePullSecrets: []
 nameOverride: ""
