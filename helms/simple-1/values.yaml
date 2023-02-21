@@ -46,7 +46,7 @@ ingress:
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: demo.fbi.com
+    - host: demo.devspace.franckrst.com
       paths: []
   tls: []
   #  - secretName: chart-example-tls
