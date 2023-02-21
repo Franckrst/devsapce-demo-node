@@ -33,13 +33,15 @@ spec:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
         - name: {{ .Chart.Name }}
+          command: [ "/bin/sh" ]
+          args: [ "-c", "cd /usr/app/devsapce-demo-node; npm ci; node start" ]
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           volumeMounts:
-            - mountPath: /usr/share/nginx/html
-              subPath: project/devsapce-demo
+            - mountPath: /usr/app
+              subPath: project/devsapce-demo-node
               name: data
           ports:
             - name: http
