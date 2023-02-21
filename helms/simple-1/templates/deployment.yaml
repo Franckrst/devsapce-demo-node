@@ -34,7 +34,7 @@ spec:
       containers:
         - name: {{ .Chart.Name }}
           command: [ "/bin/sh" ]
-          args: [ "-c", "cd /usr/app/devsapce-demo-node; npm ci; node start" ]
+          args: [ "-c", "cd /usr/app; npm ci; npm start" ]
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
